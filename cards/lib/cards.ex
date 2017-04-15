@@ -5,7 +5,7 @@ defmodule Cards do
   end
 
   def shuffle(deck) do
-    "hello"
+    "hi"
   end
 
 end
