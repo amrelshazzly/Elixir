@@ -1,11 +1,24 @@
 defmodule Cards do
 
   def create_deck do
-    ["ace","two","three"]
+
+    values = ["Ace","Two","Three","Four","Five"]
+    suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
+
+    for suit <- suits ,value <- values do
+        "#{value} Of #{suit}"
+    end
+
   end
 
   def shuffle(deck) do
-    "hi"
+    Enum.shuffle(deck)
   end
+
+  def contains?(deck, card) do
+    Enum.member?(deck, card)
+  end
+
+
 
 end
