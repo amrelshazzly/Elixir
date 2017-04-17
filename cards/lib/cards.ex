@@ -1,5 +1,11 @@
 defmodule Cards do
+  @moduledoc """
+  this module provides methods to play with deck of cards
+  """
 
+  @doc """
+  returns a list of string representing a deck
+  """
   def create_deck do
 
     values = ["Ace","Two","Three","Four","Five"]
@@ -18,7 +24,12 @@ defmodule Cards do
   def contains?(deck, card) do
     Enum.member?(deck, card)
   end
+@doc """
+divides the deck into two with a chosen hand_size
 
+##Examples
+iex -> aaa
+"""
   def deal(deck, hand_size) do
     Enum.split(deck, hand_size)
   end
@@ -33,6 +44,12 @@ defmodule Cards do
       {:ok, binary} -> :erlang.binary_to_term(binary)
       {:error, _reason} -> "Something went wrong"
     end
+  end
+
+  def create_hand(hand_size) do
+    Cards.create_deck
+    |> Cards.shuffle
+    |> Cards.deal(hand_size)
   end
 
 end
